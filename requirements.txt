@@ -1,0 +1,19 @@
+black
+bump2version
+cruft
+dataframe_image
+isort
+jupyter
+mypy
+myst-parser
+pip-check
+pre-commit
+pytest
+pytest-cov
+pytest-env
+ruff==0.0.292   # If you update Ruff, also change the 'rev' field in .pre-commit-config.yaml
+numpy==1.19.2
+opencv-python==4.4.0.42
+tqdm==4.62.0
+ultralytics
+pillow==8.0.0
