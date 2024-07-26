@@ -1,3 +1,49 @@
+# Table of Contents
+
+- [The Objective of This Project](#the-objective-of-this-project)
+- [Creation of DataSet](#creation-of-dataset)
+- [Training Phase and Result](#training-phase-and-result)
+  - [The Metrics](#the-metrics)
+  - [The Parameters](#the-parameters)
+- [How to Use It](#how-to-use-it)
+  - [Upgrade It](#upgrade-it)
+  - [Inference It](#inference-it)
+  - [Launch API](#launch-api)
+- [📚 References](#-references)
+  - [Datasets](#datasets)
+
+## The objectif of this project
+
+The main objective of this project is to allow real-time inference of underwater species. The Institucam films in real time, and the objective is to perform annotations in real time on the flow or to perform annotations on the samples where movement has been detected. To achieve this, I used the Tenaka model as a base and upgraded it to make it better suited for real conditions, such as detecting species under poor conditions, low-quality images, and so on. Additionally, I upgraded the model and created an API to improve the efficiency of treatment and avoid loading the model each time inference is performed.
+
+
+
+## Creation of DataSet
+
+The study and different tests that I can try to do show that the best results are achieved as follows. 30% of the dataset is used to show the features of the species, allowing the model to train on each species's particular features. This allows the model to know, for example, that sharks have some fins here, some gills here, etc. It also helps to avoid overfitting. Additionally, 10% of the dataset consists of other species to avoid overfitting and make the model better by forcing it to make some errors in predictions and recalibrate. Finally, 60% of the dataset is used in real conditions to train the model on what it will face in real life, especially when the buoys are set up on the water.
+
+<img src="./Documentation/imagesDoc/im1.png" alt="UI config cams" width="900"/>
+
+
+Then the creation of the global dataset is simple. I annotated some images for a given species, associated the correct class number in the configuration files and in the label files. Once I completed my dataset for each species that I wanted, I merged all of the datasets to create the global dataset with all the species.
+
+<!-- ![UI config cams](./Documentation/imagesDoc/im2.png) -->
+<img src="./Documentation/imagesDoc/im1.png" alt="UI config cams" width="900"/>
+
+## Training Phase and Result
+
+### the metrics
+
+### the parameters
+
+## How to use it
+
+### Upgrade it
+
+### inference it 
+
+### Launch API
+
 ## 📚 References
 
 ### Datasets
