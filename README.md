@@ -170,3 +170,7 @@ For example:
 ### Model
 
 - Jocher, G., Chaurasia, A., & Qiu, J. (2023). Ultralytics YOLO (Version 8.0.0) [Computer software]. https://github.com/ultralytics/ultralytics
+
+### Software
+
+- Charles, Eléonore. (2024). marine-detect: Object Detection Models for Identifying Species in Marine Environments [Software]. Version 0.0.1. AGPL-3.0. [https://github.com/Orange-OpenSource/marine-detect](https://github.com/Orange-OpenSource/marine-detect)
