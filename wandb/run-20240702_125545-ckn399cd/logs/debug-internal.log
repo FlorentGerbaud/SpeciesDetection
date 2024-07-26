@@ -1,0 +1,71 @@
+2024-07-02 12:55:46,819 INFO    MainThread:24644 [internal.py:wandb_internal():95] W&B internal server running at pid: 24644, started at: 2024-07-02 12:55:46.818887
+2024-07-02 12:55:46,822 INFO    WriterThread:24644 [datastore.py:open_for_write():77] open: /media/hdd_stockage/home/user/SpeciesDetection/marine-detect/wandb/run-20240702_125545-ckn399cd/run-ckn399cd.wandb
+2024-07-02 12:55:46,825 DEBUG   SenderThread:24644 [sender.py:send():235] send: header
+2024-07-02 12:55:46,826 DEBUG   SenderThread:24644 [sender.py:send():235] send: run
+2024-07-02 12:55:47,685 WARNING MainThread:24644 [internal.py:wandb_internal():155] Internal process interrupt: 1
+2024-07-02 12:55:47,861 WARNING MainThread:24644 [internal.py:wandb_internal():155] Internal process interrupt: 2
+2024-07-02 12:55:47,861 ERROR   MainThread:24644 [internal.py:wandb_internal():158] Internal process interrupted.
+2024-07-02 12:55:48,824 INFO    HandlerThread:24644 [handler.py:finish():790] shutting down handler
+2024-07-02 12:55:48,824 INFO    WriterThread:24644 [datastore.py:close():281] close: /media/hdd_stockage/home/user/SpeciesDetection/marine-detect/wandb/run-20240702_125545-ckn399cd/run-ckn399cd.wandb
+2024-07-02 12:56:20,196 ERROR   SenderThread:24644 [retry.py:__call__():126] Retry attempt failed:
+Traceback (most recent call last):
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/urllib3/connection.py", line 207, in _new_conn
+    socket_options=self.socket_options,
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/socket.py", line 748, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+socket.gaierror: [Errno -2] Name or service not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/urllib3/connectionpool.py", line 803, in urlopen
+    **response_kw,
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/urllib3/connectionpool.py", line 492, in _make_request
+    raise new_e
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/urllib3/connectionpool.py", line 468, in _make_request
+    self._validate_conn(conn)
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/urllib3/connectionpool.py", line 1097, in _validate_conn
+    conn.connect()
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/urllib3/connection.py", line 611, in connect
+    self.sock = sock = self._new_conn()
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/urllib3/connection.py", line 210, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: <urllib3.connection.HTTPSConnection object at 0x7f1865ba1390>: Failed to resolve 'api.wandb.ai' ([Errno -2] Name or service not known)
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/requests/adapters.py", line 497, in send
+    chunked=chunked,
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/urllib3/connectionpool.py", line 846, in urlopen
+    method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/urllib3/util/retry.py", line 515, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f1865ba1390>: Failed to resolve 'api.wandb.ai' ([Errno -2] Name or service not known)"))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/wandb/sdk/lib/retry.py", line 102, in __call__
+    result = self._call_fn(*args, **kwargs)
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/wandb/sdk/internal/internal_api.py", line 141, in execute
+    return self.client.execute(*args, **kwargs)
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 52, in execute
+    result = self._get_result(document, *args, **kwargs)
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/client.py", line 60, in _get_result
+    return self.transport.execute(document, *args, **kwargs)
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/wandb/vendor/gql-0.2.0/wandb_gql/transport/requests.py", line 38, in execute
+    request = requests.post(self.url, **post_args)
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/requests/api.py", line 115, in post
+    return request("post", url, data=data, json=json, **kwargs)
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/requests/api.py", line 59, in request
+    return session.request(method=method, url=url, **kwargs)
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/requests/sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/requests/sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/requests/adapters.py", line 519, in send
+    raise ConnectionError(e, request=request)
+requests.exceptions.ConnectionError: HTTPSConnectionPool(host='api.wandb.ai', port=443): Max retries exceeded with url: /graphql (Caused by NameResolutionError("<urllib3.connection.HTTPSConnection object at 0x7f1865ba1390>: Failed to resolve 'api.wandb.ai' ([Errno -2] Name or service not known)"))

@@ -1,0 +1,35 @@
+2024-07-02 12:55:45,921 INFO    MainThread:24095 [wandb_setup.py:_flush():75] Loading settings from /home/user/.config/wandb/settings
+2024-07-02 12:55:45,921 INFO    MainThread:24095 [wandb_setup.py:_flush():75] Loading settings from /media/hdd_stockage/home/user/SpeciesDetection/marine-detect/wandb/settings
+2024-07-02 12:55:45,921 INFO    MainThread:24095 [wandb_setup.py:_flush():75] Loading settings from environment variables: {}
+2024-07-02 12:55:45,921 INFO    MainThread:24095 [wandb_setup.py:_flush():75] Inferring run settings from compute environment: {'program_relpath': 'src/marine_detect/train.py', 'program': '/media/hdd_stockage/home/user/SpeciesDetection/marine-detect/src/marine_detect/train.py'}
+2024-07-02 12:55:45,921 INFO    MainThread:24095 [wandb_init.py:_log_setup():438] Logging user logs to /media/hdd_stockage/home/user/SpeciesDetection/marine-detect/wandb/run-20240702_125545-ckn399cd/logs/debug.log
+2024-07-02 12:55:45,922 INFO    MainThread:24095 [wandb_init.py:_log_setup():439] Logging internal logs to /media/hdd_stockage/home/user/SpeciesDetection/marine-detect/wandb/run-20240702_125545-ckn399cd/logs/debug-internal.log
+2024-07-02 12:55:45,922 INFO    MainThread:24095 [wandb_init.py:init():472] calling init triggers
+2024-07-02 12:55:45,922 INFO    MainThread:24095 [wandb_init.py:init():476] wandb.init called with sweep_config: {}
+config: {'task': 'detect', 'mode': 'train', 'model': '/media/hdd_stockage/home/user/SpeciesDetection/marine-detect/model/FishInv.pt', 'data': '/media/hdd_stockage/home/user/SpeciesDetection/marine-detect/src/marine_detect/trainFishInv.yaml', 'epochs': 100, 'patience': 50, 'batch': 16, 'imgsz': 640, 'save': True, 'save_period': -1, 'cache': False, 'device': None, 'workers': 8, 'project': None, 'name': None, 'exist_ok': False, 'pretrained': True, 'optimizer': 'auto', 'verbose': True, 'seed': 0, 'deterministic': True, 'single_cls': False, 'rect': False, 'cos_lr': False, 'close_mosaic': 10, 'resume': False, 'amp': True, 'fraction': 1.0, 'profile': False, 'overlap_mask': True, 'mask_ratio': 4, 'dropout': 0.0, 'val': True, 'split': 'val', 'save_json': False, 'save_hybrid': False, 'conf': None, 'iou': 0.7, 'max_det': 300, 'half': False, 'dnn': False, 'plots': True, 'source': None, 'show': False, 'save_txt': False, 'save_conf': False, 'save_crop': False, 'show_labels': True, 'show_conf': True, 'vid_stride': 1, 'line_width': None, 'visualize': False, 'augment': False, 'agnostic_nms': False, 'classes': None, 'retina_masks': False, 'boxes': True, 'format': 'torchscript', 'keras': False, 'optimize': False, 'int8': False, 'dynamic': False, 'simplify': False, 'opset': None, 'workspace': 4, 'nms': False, 'lr0': 0.01, 'lrf': 0.01, 'momentum': 0.937, 'weight_decay': 0.0005, 'warmup_epochs': 3.0, 'warmup_momentum': 0.8, 'warmup_bias_lr': 0.1, 'box': 7.5, 'cls': 0.5, 'dfl': 1.5, 'pose': 12.0, 'kobj': 1.0, 'label_smoothing': 0.0, 'nbs': 64, 'hsv_h': 0.015, 'hsv_s': 0.7, 'hsv_v': 0.4, 'degrees': 0.0, 'translate': 0.1, 'scale': 0.5, 'shear': 0.0, 'perspective': 0.0, 'flipud': 0.0, 'fliplr': 0.5, 'mosaic': 1.0, 'mixup': 0.0, 'copy_paste': 0.0, 'cfg': None, 'tracker': 'botsort.yaml', 'save_dir': '/home/user/.pyenv/runs/detect/train9'}
+2024-07-02 12:55:45,922 INFO    MainThread:24095 [wandb_init.py:init():525] starting backend
+2024-07-02 12:55:45,922 INFO    MainThread:24095 [backend.py:_multiprocessing_setup():101] multiprocessing start_methods=fork,spawn,forkserver, using: spawn
+2024-07-02 12:55:45,935 INFO    MainThread:24095 [backend.py:ensure_launched():219] starting backend process...
+2024-07-02 12:55:45,947 INFO    MainThread:24095 [backend.py:ensure_launched():225] started backend process with pid: 24644
+2024-07-02 12:55:45,948 INFO    MainThread:24095 [wandb_init.py:init():534] backend started and connected
+2024-07-02 12:55:45,953 INFO    MainThread:24095 [wandb_init.py:init():598] updated telemetry
+2024-07-02 12:55:45,984 INFO    MainThread:24095 [wandb_init.py:init():629] communicating run to backend with 30 second timeout
+2024-07-02 12:55:47,685 WARNING MainThread:24095 [wandb_init.py:init():1017] interrupted
+Traceback (most recent call last):
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/wandb/sdk/wandb_init.py", line 996, in init
+    run = wi.init()
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/wandb/sdk/wandb_init.py", line 630, in init
+    run_result = backend.interface.communicate_run(run, timeout=30)
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/wandb/sdk/interface/interface.py", line 210, in communicate_run
+    return self._communicate_run(run, timeout=timeout)
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/wandb/sdk/interface/interface_shared.py", line 323, in _communicate_run
+    resp = self._communicate(req, timeout=timeout)
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/wandb/sdk/interface/interface_shared.py", line 225, in _communicate
+    return self._communicate_async(rec, local=local).get(timeout=timeout)
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/site-packages/wandb/sdk/interface/router.py", line 37, in get
+    is_set = self._object_ready.wait(timeout)
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/threading.py", line 552, in wait
+    signaled = self._cond.wait(timeout)
+  File "/home/user/.pyenv/versions/3.7.4/lib/python3.7/threading.py", line 300, in wait
+    gotit = waiter.acquire(True, timeout)
+KeyboardInterrupt
