@@ -7,3 +7,9 @@ title: "SpeciesDetection"
 version: 1.0.0
 date-released: 2024-07-25
 url: "https://github.com/FlorentGerbaud/SpeciesDetection"
+abstract: |
+    This project focuses on real-time inference of underwater species by enhancing the Tenaka model to better handle challenging conditions such as poor image quality and low visibility. 
+    The system integrates real-time annotation capabilities, either directly on live footage or on pre-recorded samples where movement is detected. 
+    To achieve this, a comprehensive dataset is created and organized, with 30% of the data used for species feature recognition, 10% for reducing overfitting, and 60% for simulating real-life conditions.
+    The project includes a detailed process for dataset creation, model training, and inference, with tools and scripts provided for annotation, dataset management, and model optimization. 
+    The upgraded model offers an efficient API for real-time predictions, minimizing the need to reload the model repeatedly.
