@@ -91,7 +91,7 @@ def combine_results(original_image: np.ndarray, results_list: List[Any]) -> np.n
 
 
 def predict_on_images(
-    model_paths: List[str],
+    models: List[YOLO],
     confs_threshold: List[float],
     images_input_folder_path: str,
     images_output_folder_path: str,
@@ -112,7 +112,7 @@ def predict_on_images(
     Returns:
         None
     """
-    models = [YOLO(model_path) for model_path in model_paths]
+    #models = [YOLO(model_path) for model_path in model_paths]
 
     if images_output_folder_path:
         os.makedirs(images_output_folder_path, exist_ok=True)
@@ -138,7 +138,7 @@ def predict_on_images(
 
 
 def predict_on_video(
-    model_paths: List[str],
+    models: List[YOLO],
     confs_threshold: List[float],
     input_video_path: str,
     output_video_path: str,
@@ -159,7 +159,7 @@ def predict_on_video(
     Returns:
         None
     """
-    models = [YOLO(model_path) for model_path in model_paths]
+    #models = [YOLO(model_path) for model_path in model_paths]
     cap = cv2.VideoCapture(input_video_path)
 
     os.makedirs(os.path.dirname(output_video_path), exist_ok=True)
