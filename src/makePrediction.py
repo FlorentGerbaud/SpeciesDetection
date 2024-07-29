@@ -1,6 +1,10 @@
 # main.py
-
+from pathlib import Path
 from sendRequestToAPI import SpeciesDetectionAPIClient
+
+def get_mp4_files(directory):
+    """Récupère tous les chemins des fichiers .mp4 dans le répertoire spécifié."""
+    return [str(file) for file in Path(directory).rglob('*.mp4')]
 
 def main():
     # URL de base de l'API Flask
@@ -11,17 +15,27 @@ def main():
     
     # Chemins des données
     image_path = "../imageToProcess"
-    video_path = "/media/hdd_stockage/home/user/SpeciesDetection/SpeciesDetection/videoToProcess/Broadcast_camera_B_CRA_du_04_09_2023_a_06h31_wipe.mp4"
+    video_path = "../videoToProcess"
     
-    # Prédiction sur les images
-    print("Prédiction sur les images...")
-    response_images = client.predict(images_input_folder_path=image_path, type_of_data="images")
-    print("Réponse de l'API pour les images:", response_images)
+    choice=2
     
-    # Prédiction sur la vidéo
-    print("Prédiction sur la vidéo...")
-    response_video = client.predict(input_video_path=video_path, type_of_data="video")
-    print("Réponse de l'API pour la vidéo:", response_video)
+    if choice==1:
+        
+        # Prédiction sur les images
+        print("Prédiction sur les images...")
+        response_images = client.predict(images_input_folder_path=image_path, type_of_data="images")
+        print("Réponse de l'API pour les images:", response_images)
+        
+    else:
+        print("get mp4 files")
+        mp4Files = get_mp4_files(video_path)
+        print("files", mp4Files)
+        # Prédiction sur la vidéo
+        for videoPath in mp4Files:
+            print("Prédiction sur la vidéo : ", videoPath)
+            response_video = client.predict(input_video_path=videoPath, type_of_data="video")
+            print("Réponse de l'API pour la vidéo:", response_video)
+        
 
 if __name__ == "__main__":
     main()
