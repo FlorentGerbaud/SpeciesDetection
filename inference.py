@@ -5,7 +5,7 @@ currentDir=os.path.dirname(os.path.abspath(__file__))
 srcDir=os.path.join(currentDir,'src')
 sys.path.append(srcDir)
 
-from marine_detect.predict import predict_on_images, predict_on_video
+from src.predict import predict_on_images, predict_on_video
 
 # Predict on a set of images using FishInv and MegaFauna models
 predict_on_images(

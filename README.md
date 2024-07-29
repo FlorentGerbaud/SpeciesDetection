@@ -28,7 +28,7 @@ The study and different tests that I can try to do show that the best results ar
 Then the creation of the global dataset is simple. I annotated some images for a given species, associated the correct class number in the configuration files and in the label files. Once I completed my dataset for each species that I wanted, I merged all of the datasets to create the global dataset with all the species.
 
 <!-- ![UI config cams](./Documentation/imagesDoc/im2.png) -->
-<img src="./Documentation/imagesDoc/im1.png" alt="UI config cams" width="900"/>
+<img src="./Documentation/imagesDoc/im2.png" alt="UI config cams" width="900"/>
 
 ## Training Phase and Result
 
